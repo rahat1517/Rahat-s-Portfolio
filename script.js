@@ -129,7 +129,7 @@ counterEls.forEach((el) => counterObserver.observe(el));
 
 async function fetchLeetCodeStats() {
   if (!LEETCODE_USERNAME || LEETCODE_USERNAME === "Rahat1517") {
-    setLeetCodeFallback("100+");
+    setLeetCodeFallback("116");
     console.warn(
       "[LeetCode] Set LEETCODE_USERNAME in script.js to enable live stats."
     );
