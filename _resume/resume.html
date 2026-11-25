@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>G. M. Rashidul Islam Rahat — Resume</title>
+<!-- Source for resume.pdf. Regenerate: open in Chrome → Print → Save as PDF (A4, no margins/headers). -->
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Carlito, Calibri, Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.26;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  .page { width: 210mm; min-height: 297mm; padding: 9mm 13mm 6mm; }
+  a { color: inherit; text-decoration: none; }
+
+  header { text-align: center; margin-bottom: 7pt; }
+  h1 { font-size: 21pt; font-weight: 700; letter-spacing: -0.3pt; line-height: 1.1; }
+  .title { font-size: 10.5pt; font-weight: 500; color: #2b5a1e; margin-top: 2pt; }
+  .contact { margin-top: 4pt; font-size: 8.8pt; color: #333; }
+  .contact span + span::before { content: "  |  "; color: #999; white-space: pre; }
+
+  h2 {
+    font-size: 10.2pt;
+    font-weight: 700;
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+    color: #2b5a1e;
+    border-bottom: 1.2pt solid #2b5a1e;
+    padding-bottom: 1.5pt;
+    margin: 6.5pt 0 3pt;
+  }
+  p.summary { text-align: justify; }
+
+  .item { margin-bottom: 3.5pt; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+  .row .left { font-weight: 600; }
+  .row .right { font-size: 8.8pt; color: #444; white-space: nowrap; }
+  .sub { font-style: italic; color: #333; font-size: 9pt; }
+  .stack { font-weight: 400; color: #444; font-size: 8.8pt; }
+
+  ul { margin: 1.5pt 0 0 13pt; }
+  li { margin-bottom: 0.6pt; padding-left: 1pt; }
+  li::marker { color: #2b5a1e; }
+
+  .skills div { margin-bottom: 1.8pt; }
+  .skills b { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>G. M. Rashidul Islam Rahat</h1>
+    <div class="title">Software Engineer · Full-Stack &amp; AI Developer</div>
+    <div class="contact">
+      <span>Dhaka, Bangladesh</span><span>+880 1754-678501</span><span><a href="mailto:bsse1517@iit.du.ac.bd">bsse1517@iit.du.ac.bd</a></span>
+    </div>
+    <div class="contact">
+      <span><a href="https://rahat1517.github.io/Rahat-s-Portfolio/">rahat1517.github.io/Rahat-s-Portfolio</a></span><span><a href="https://github.com/rahat1517">github.com/rahat1517</a></span><span><a href="https://www.linkedin.com/in/g-m-rashidul-islam-rahat-509b66341/">linkedin.com/in/g-m-rashidul-islam-rahat-509b66341</a></span>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <p class="summary">
+    Final-semester Software Engineering student at IIT, University of Dhaka (graduating 2027) who builds
+    offline LLM agents in Python, full-stack web apps (React, Node.js, Flask, MySQL) and Java desktop software.
+    150+ algorithmic problems solved; experienced in requirements engineering (IEEE SRS).
+    Seeking a Junior Software Engineer role or internship.
+  </p>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <div><b>Languages:</b> Python, Java, C, C++, JavaScript, SQL, PHP</div>
+    <div><b>AI / LLM:</b> Ollama, Qwen2.5, LLM agents, Text-to-SQL, intent routing, conversational memory, LLM evaluation (token cost)</div>
+    <div><b>Web &amp; Frameworks:</b> React.js, Node.js, Flask, Streamlit, Tailwind CSS, Three.js, HTML5, CSS3, JavaFX</div>
+    <div><b>Databases:</b> MySQL, PostgreSQL, SQLite, Oracle DB</div>
+    <div><b>Tools &amp; Practices:</b> Git, GitHub, Requirements Engineering (IEEE SRS), OOP, Data Structures &amp; Algorithms, Arduino / Embedded C</div>
+  </div>
+
+  <h2>Projects</h2>
+
+  <div class="item">
+    <div class="row">
+      <div class="left">Offline Bank AI Agent <span class="stack">| Python, Ollama (Qwen2.5-Coder 1.5B), SQLite, Streamlit</span></div>
+    </div>
+    <ul>
+      <li>Built a banking assistant that turns Bangla and Banglish questions into SQL and answers them, running 100% offline on a local LLM so customer data never leaves the machine.</li>
+      <li>Designed an agent pipeline: intent router, SQL generator, read-only SQL runner, general Q&amp;A, 4-turn conversational memory and a response formatter.</li>
+      <li>Modeled an 8-table banking database (customers, accounts, transactions, cards, loans and more) and kept it safe from model mistakes by running all generated SQL through a read-only executor.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div class="left">Academix — Smart Semester Fee Management System <span class="stack">| React.js, Node.js, MySQL</span></div>
+    </div>
+    <ul>
+      <li>Developed a full-stack platform that moves university semester-fee payment online, replacing queues and manual verification.</li>
+      <li>Implemented online payments, account verification and secure role-based dashboards for students and administrators on a relational MySQL schema.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div class="left">Goal Tracker Admin Portal <span class="stack">| Python, Flask, JavaScript, Tailwind CSS, Three.js</span></div>
+    </div>
+    <ul>
+      <li>Built a football-themed admin portal (Flask backend, single-page Tailwind frontend) with interactive Three.js 3D graphics, including a live match simulation with moving players and a scoreboard.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row">
+      <div class="left">LLMs as Measured Components — Agentic Software Engineering <span class="stack">| Python, Ollama (Qwen2.5 3B)</span></div>
+    </div>
+    <ul>
+      <li>Built a SQL calculation agent and measured the token cost of English vs. Bangla prompts on a local model, treating the LLM as an engineering component to be evaluated.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="left" style="font-weight:600">Other Projects</div>
+    <ul>
+      <li><b>C Syntax Checker</b> (C): analyzes C source files and reports syntax errors with clear diagnostics.</li>
+      <li><b>Rahat Shop</b> (Java, JavaFX, MySQL) and <b>Inventory Management System</b> (PHP, SQLite): stock and transaction management apps for small businesses.</li>
+      <li><b>Automated Toll System</b> (Arduino, Embedded C): IoT vehicle detection and real-time toll calculation.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="row">
+      <div class="left">B.Sc. in Software Engineering (BSSE) — Institute of Information Technology, University of Dhaka</div>
+      <div class="right">2023 – 2027 (Expected)</div>
+    </div>
+    <div>CGPA: 3.23 / 4.00 · Currently in 8th semester</div>
+    <div class="sub">Coursework: Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Software Requirements Engineering, Web Technologies, Agentic Software Engineering</div>
+  </div>
+  <div class="item">
+    <div class="row">
+      <div class="left">HSC (Science) — Pairahat United College, Jashore Board · GPA 5.00 / 5.00</div>
+      <div class="right">2022</div>
+    </div>
+    <div class="row">
+      <div class="left" style="font-weight:600">SSC (Science) — Pairahat Secondary School, Jashore Board · GPA 5.00 / 5.00</div>
+      <div class="right">2020</div>
+    </div>
+  </div>
+
+  <h2>Problem Solving &amp; Achievements</h2>
+  <ul>
+    <li>Solved 150+ algorithmic problems: 116 on LeetCode (<a href="https://leetcode.com/Rahat1517">leetcode.com/Rahat1517</a>) and 41 on Codeforces (<a href="https://codeforces.com/profile/rahat1517">codeforces.com/profile/rahat1517</a>).</li>
+    <li>Upazila Champion, Bangladesh Science Olympiad (Secondary Level).</li>
+  </ul>
+
+  <h2>Leadership &amp; Activities</h2>
+  <ul>
+    <li><b>Volunteer</b>, ITVERSE 2023 (IIT, DU tech festival) and DU Inter-University Debating Competition · <b>Higher Secondary Tutor</b> in core science subjects.</li>
+    <li><b>IIT Cricket Team</b> (all-rounder) · <b>BADHAN</b> blood donation activist, Fazlul Huq Muslim Hall.</li>
+  </ul>
+
+</div>
+</body>
+</html>
