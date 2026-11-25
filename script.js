@@ -1,244 +1,289 @@
+// ─── CONFIG ────────────────────────────────────
+const LEETCODE_USERNAME   = "Rahat1517";
+const CODEFORCES_HANDLE   = "rahat1517";
 
-const LEETCODE_USERNAME = "Rahat1517";
+// Shown if the live APIs are unreachable. Update these now and then.
+const LC_FALLBACK = { total: 116, easy: 106, medium: 10, hard: 0 };
+const CF_FALLBACK = { solved: 41 };
 // ───────────────────────────────────────────────
 
+const stats = { lc: LC_FALLBACK.total, cf: CF_FALLBACK.solved };
 
-// ─── CUSTOM CURSOR ─────────────────────────────
-const cursor    = document.getElementById("cursor");
-const cursorRing = document.getElementById("cursorRing");
 
-let mouseX = 0, mouseY = 0;
-let ringX  = 0, ringY  = 0;
+// ─── CUSTOM CURSOR (mouse / trackpad only) ─────
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + "px";
-  cursor.style.top  = mouseY + "px";
-});
+if (finePointer && !reduceMotion) {
+  document.body.classList.add("custom-cursor");
+  const cursor     = document.getElementById("cursor");
+  const cursorRing = document.getElementById("cursorRing");
+  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
-function animateRing() {
-  ringX += (mouseX - ringX) * 0.12;
-  ringY += (mouseY - ringY) * 0.12;
-  cursorRing.style.left = ringX + "px";
-  cursorRing.style.top  = ringY + "px";
-  requestAnimationFrame(animateRing);
+  document.addEventListener("mousemove", (e) => {
+    document.body.classList.add("cursor-on");
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + "px";
+    cursor.style.top  = mouseY + "px";
+  });
+
+  (function animateRing() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    cursorRing.style.left = ringX + "px";
+    cursorRing.style.top  = ringY + "px";
+    requestAnimationFrame(animateRing);
+  })();
+
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.closest("a, button")) {
+      cursor.style.transform = "translate(-50%, -50%) scale(2)";
+      cursorRing.style.opacity = "1";
+    }
+  });
+  document.addEventListener("mouseleave", () => document.body.classList.remove("cursor-on"));
+  document.addEventListener("mouseout", (e) => {
+    if (e.target.closest("a, button")) {
+      cursor.style.transform = "translate(-50%, -50%) scale(1)";
+      cursorRing.style.opacity = "0.5";
+    }
+  });
 }
-animateRing();
-
-// Cursor scale on hover
-document.querySelectorAll("a, button").forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    cursor.style.transform = "translate(-50%, -50%) scale(2)";
-    cursorRing.style.opacity = "1";
-  });
-  el.addEventListener("mouseleave", () => {
-    cursor.style.transform = "translate(-50%, -50%) scale(1)";
-    cursorRing.style.opacity = "0.5";
-  });
-});
 
 
 // ─── NAV SCROLL EFFECT ─────────────────────────
 const nav = document.getElementById("nav");
+const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 50);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-window.addEventListener("scroll", () => {
-  nav.classList.toggle("scrolled", window.scrollY > 50);
-});
+
+// ─── MOBILE MENU ───────────────────────────────
+const burger   = document.getElementById("navBurger");
+const navLinks = document.getElementById("navLinks");
+
+function setMenu(open) {
+  navLinks.classList.toggle("open", open);
+  burger.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", String(open));
+  burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+
+burger.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+navLinks.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
 
-// ─── MOBILE BURGER MENU ────────────────────────
-const burger    = document.getElementById("navBurger");
-const navLinks  = document.querySelector(".nav-links");
-
-burger.addEventListener("click", () => {
-  const isOpen = navLinks.style.display === "flex";
-  navLinks.style.display = isOpen ? "none" : "flex";
-  navLinks.style.flexDirection = "column";
-  navLinks.style.position = "fixed";
-  navLinks.style.top = "64px";
-  navLinks.style.right = "0";
-  navLinks.style.left = "0";
-  navLinks.style.background = "#0a0a0a";
-  navLinks.style.padding = "16px 24px 24px";
-  navLinks.style.borderBottom = "1px solid #1a1a1a";
-});
-
-// Close nav on link click (mobile)
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.style.display = "none";
-  });
-});
+// ─── ACTIVE NAV LINK ON SCROLL ─────────────────
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const id = entry.target.id;
+      navLinks.querySelectorAll("a").forEach((a) => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+      });
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" }
+);
+document.querySelectorAll("main section[id]").forEach((s) => sectionObserver.observe(s));
 
 
 // ─── SCROLL REVEAL ─────────────────────────────
-const revealEls = document.querySelectorAll(".reveal");
-
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, i * 80);
-      }
+      if (!entry.isIntersecting) return;
+      setTimeout(() => entry.target.classList.add("visible"), i * 80);
+      revealObserver.unobserve(entry.target);
     });
   },
   { threshold: 0.08 }
 );
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-revealEls.forEach((el) => revealObserver.observe(el));
 
-
-// ─── STAT COUNTER ANIMATION ────────────────────
-const counterEls = document.querySelectorAll(".stat-num[data-target]");
+// ─── COUNTERS ──────────────────────────────────
+function animateCount(el, to, suffix = "") {
+  if (!el) return;
+  if (reduceMotion) { el.textContent = to + suffix; return; }
+  let current = 0;
+  const step = Math.max(1, Math.ceil(to / 60));
+  const timer = setInterval(() => {
+    current = Math.min(current + step, to);
+    el.textContent = current + suffix;
+    if (current >= to) clearInterval(timer);
+  }, 22);
+}
 
 const counterObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-
-      const el     = entry.target;
-      const target = parseInt(el.dataset.target);
-      const suffix = el.dataset.suffix ?? "+";
-      let current  = 0;
-      const step   = target / 60;
-
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        el.textContent = Math.floor(current) + suffix;
-      }, 22);
-
+      const el = entry.target;
+      animateCount(el, parseInt(el.dataset.target, 10), el.dataset.suffix ?? "+");
       counterObserver.unobserve(el);
     });
   },
   { threshold: 0.5 }
 );
+document.querySelectorAll(".stat-num[data-target]").forEach((el) => counterObserver.observe(el));
 
-counterEls.forEach((el) => counterObserver.observe(el));
+
+// ─── PROJECT FILTERS ───────────────────────────
+const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const f = btn.dataset.filter;
+    filterBtns.forEach((b) => {
+      b.classList.toggle("active", b === btn);
+      b.setAttribute("aria-pressed", String(b === btn));
+    });
+    projectCards.forEach((card) => {
+      const show = f === "all" || card.dataset.category === f;
+      card.classList.toggle("hidden", !show);
+      if (show) card.classList.add("visible");
+    });
+  });
+});
+
+
+// ─── COPY EMAIL ────────────────────────────────
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const original = btn.textContent;
+    try {
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      btn.textContent = "✓ Copied!";
+    } catch {
+      btn.textContent = btn.dataset.copy;
+    }
+    setTimeout(() => (btn.textContent = original), 2000);
+  });
+});
+
+
+// ─── RÉSUMÉ BUTTONS ────────────────────────────
+// Hides the résumé buttons until a resume.pdf is added next to index.html,
+// so visitors never hit a broken link.
+(async function checkResume() {
+  const btns = document.querySelectorAll(".resume-btn");
+  try {
+    const res = await fetch("resume.pdf", { method: "HEAD", cache: "no-store" });
+    const type = res.headers.get("content-type") || "";
+    if (!res.ok || type.includes("text/html")) throw new Error("missing");
+  } catch {
+    btns.forEach((b) => (b.hidden = true));
+  }
+})();
+
+
+// ─── FOOTER YEAR ───────────────────────────────
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// ─── TOTAL SOLVED (hero) ───────────────────────
+function updateTotalSolved() {
+  const total = stats.lc + stats.cf;
+  const rounded = Math.floor(total / 10) * 10;
+  const el = document.getElementById("hero-solved");
+  if (el) el.textContent = (total % 10 === 0 ? total : rounded + "+");
+}
 
 
 // ─── LEETCODE LIVE DATA ────────────────────────
-// Uses alfa-leetcode-api (free, no auth needed)
-// Fetches total + difficulty breakdown automatically.
+async function fetchJSON(url) {
+  const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  return res.json();
+}
 
 async function fetchLeetCodeStats() {
-  if (!LEETCODE_USERNAME || LEETCODE_USERNAME === "Rahat1517") {
-    setLeetCodeFallback("116");
-    console.warn(
-      "[LeetCode] Set LEETCODE_USERNAME in script.js to enable live stats."
-    );
-    return;
-  }
+  const sources = [
+    async () => {
+      const d = await fetchJSON(`https://alfa-leetcode-api.onrender.com/${LEETCODE_USERNAME}/solved`);
+      return { total: d.solvedProblem, easy: d.easySolved, medium: d.mediumSolved, hard: d.hardSolved };
+    },
+    async () => {
+      const d = await fetchJSON(`https://leetcode-stats-api.herokuapp.com/${LEETCODE_USERNAME}`);
+      if (d.status === "error") throw new Error(d.message);
+      return { total: d.totalSolved, easy: d.easySolved, medium: d.mediumSolved, hard: d.hardSolved };
+    },
+  ];
 
-  try {
-    // Primary API
-    const url = `https://alfa-leetcode-api.onrender.com/${LEETCODE_USERNAME}/solved`;
-    const res  = await fetch(url, { signal: AbortSignal.timeout(8000) });
-
-    if (!res.ok) throw new Error("API error " + res.status);
-
-    const data = await res.json();
-
-    // data shape: { solvedProblem, easySolved, mediumSolved, hardSolved }
-    const total  = data.solvedProblem ?? data.totalSolved ?? null;
-    const easy   = data.easySolved   ?? "—";
-    const medium = data.mediumSolved ?? "—";
-    const hard   = data.hardSolved   ?? "—";
-
-    if (total === null) throw new Error("Unexpected API shape");
-
-    applyLeetCodeStats(total, easy, medium, hard);
-
-  } catch (err) {
-    console.warn("[LeetCode] Primary API failed, trying fallback...", err.message);
-    fetchLeetCodeFallbackAPI();
-  }
-}
-
-async function fetchLeetCodeFallbackAPI() {
-  try {
-    // Fallback: leetcode-stats-api
-    const url = `https://leetcode-stats-api.herokuapp.com/${LEETCODE_USERNAME}`;
-    const res  = await fetch(url, { signal: AbortSignal.timeout(8000) });
-    const data = await res.json();
-
-    if (data.status === "error") throw new Error(data.message);
-
-    const total  = data.totalSolved;
-    const easy   = data.easySolved;
-    const medium = data.mediumSolved;
-    const hard   = data.hardSolved;
-
-    applyLeetCodeStats(total, easy, medium, hard);
-
-  } catch (err) {
-    console.warn("[LeetCode] Both APIs failed. Showing static data.", err.message);
-    setLeetCodeFallback("100+");
-  }
-}
-
-function applyLeetCodeStats(total, easy, medium, hard) {
-  // Animate the main stat counter in stats bar
-  const lcStat = document.getElementById("lc-stat");
-  if (lcStat) {
-    lcStat.removeAttribute("data-target"); // disable generic counter
-    animateCount(lcStat, 0, total, "+");
-  }
-
-  // Terminal live value
-  const termLc = document.getElementById("terminal-lc");
-  if (termLc) termLc.textContent = total;
-
-  // CP card big number
-  const lcCpCount = document.getElementById("lc-cp-count");
-  if (lcCpCount) animateCount(lcCpCount, 0, total, "+");
-
-  // Difficulty breakdown
-  const breakdown = document.getElementById("lc-breakdown");
-  if (breakdown) {
-    breakdown.innerHTML = `
-      <span class="diff easy">Easy: ${easy}</span>
-      <span class="diff medium">Medium: ${medium}</span>
-      <span class="diff hard">Hard: ${hard}</span>
-    `;
-  }
-
-  console.log(
-    `[LeetCode] ✓ Loaded — Total: ${total} | Easy: ${easy} | Medium: ${medium} | Hard: ${hard}`
-  );
-}
-
-function setLeetCodeFallback(label) {
-  const ids = ["lc-stat", "lc-cp-count", "terminal-lc"];
-  ids.forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = label;
-  });
-}
-
-function animateCount(el, from, to, suffix = "") {
-  let current = from;
-  const step  = Math.ceil(to / 60);
-
-  const timer = setInterval(() => {
-    current += step;
-    if (current >= to) {
-      current = to;
-      clearInterval(timer);
+  for (const source of sources) {
+    try {
+      const s = await source();
+      if (typeof s.total !== "number" || s.total < LC_FALLBACK.total) throw new Error("bad data");
+      applyLeetCodeStats(s, true);
+      return;
+    } catch (err) {
+      console.warn("[LeetCode] source failed:", err.message);
     }
-    el.textContent = current + suffix;
-  }, 22);
+  }
+  applyLeetCodeStats(LC_FALLBACK, false);
 }
 
-// Kick it off!
-fetchLeetCodeStats();
+function applyLeetCodeStats({ total, easy, medium, hard }, live) {
+  stats.lc = total;
+  animateCount(document.getElementById("lc-stat"), total);
+  animateCount(document.getElementById("lc-cp-count"), total);
+  document.getElementById("terminal-lc").textContent = total;
+  document.getElementById("lc-breakdown").innerHTML = `
+    <span class="diff easy">Easy: ${easy}</span>
+    <span class="diff medium">Medium: ${medium}</span>
+    <span class="diff hard">Hard: ${hard}</span>`;
+  document.getElementById("lc-live").hidden = !live;
+  updateTotalSolved();
+}
 
-// ─── AUTO-REFRESH every 5 minutes ──────────────
-// So if the user keeps the tab open, stats stay fresh.
-setInterval(fetchLeetCodeStats, 5 * 60 * 1000);
+
+// ─── CODEFORCES LIVE DATA (official API) ───────
+async function fetchCodeforcesStats() {
+  try {
+    const [info, status] = await Promise.all([
+      fetchJSON(`https://codeforces.com/api/user.info?handles=${CODEFORCES_HANDLE}`),
+      fetchJSON(`https://codeforces.com/api/user.status?handle=${CODEFORCES_HANDLE}`),
+    ]);
+    if (info.status !== "OK" || status.status !== "OK") throw new Error("API not OK");
+
+    const solved = new Set(
+      status.result
+        .filter((s) => s.verdict === "OK")
+        .map((s) => `${s.problem.contestId}-${s.problem.index}`)
+    ).size;
+
+    const user = info.result[0];
+    applyCodeforcesStats(Math.max(solved, CF_FALLBACK.solved), user, true);
+  } catch (err) {
+    console.warn("[Codeforces] API failed:", err.message);
+    applyCodeforcesStats(CF_FALLBACK.solved, null, false);
+  }
+}
+
+function applyCodeforcesStats(solved, user, live) {
+  stats.cf = solved;
+  animateCount(document.getElementById("cf-stat"), solved);
+  animateCount(document.getElementById("cf-cp-count"), solved);
+  document.getElementById("terminal-cf").textContent = solved;
+  document.getElementById("cf-live").hidden = !live;
+
+  if (user && user.rating) {
+    const rank = user.rank ? user.rank.replace(/\b\w/g, (c) => c.toUpperCase()) : "Rated";
+    document.getElementById("cf-breakdown").innerHTML = `
+      <span class="diff easy">Rating: ${user.rating}</span>
+      <span class="diff medium">Max: ${user.maxRating}</span>
+      <span class="diff easy">${rank}</span>`;
+  }
+  updateTotalSolved();
+}
+
+
+// Kick it off + refresh every 10 minutes while the tab is open
+fetchLeetCodeStats();
+fetchCodeforcesStats();
+setInterval(() => { fetchLeetCodeStats(); fetchCodeforcesStats(); }, 10 * 60 * 1000);

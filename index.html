@@ -3,60 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>G. M. Rashidul Islam Rahat — Software Engineer</title>
+  <title>G. M. Rashidul Islam Rahat — Software Engineer | Full-Stack Developer</title>
+  <meta name="description" content="G. M. Rashidul Islam Rahat — Software Engineering student at IIT, University of Dhaka. Full-stack developer (React, Node.js, MySQL, Java) and competitive programmer, open to software engineering internships and junior roles." />
+  <meta name="keywords" content="Software Engineer, Full-Stack Developer, React, Node.js, MySQL, Java, C++, University of Dhaka, IIT, Internship, Bangladesh" />
+  <meta name="author" content="G. M. Rashidul Islam Rahat" />
+  <meta name="theme-color" content="#080808" />
+
+  <!-- Open Graph (link previews on LinkedIn, Facebook, Slack...) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="G. M. Rashidul Islam Rahat — Software Engineer" />
+  <meta property="og:description" content="Full-stack developer & Software Engineering student at IIT, University of Dhaka. Open to SWE internships and junior roles." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080808'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='34' fill='%23c8f050'%3ER%3C/text%3E%3C/svg%3E" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured data: helps Google show your name, role and profiles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "G. M. Rashidul Islam Rahat",
+    "jobTitle": "Software Engineer (Student)",
+    "alumniOf": "Institute of Information Technology, University of Dhaka",
+    "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "BD" },
+    "email": "mailto:bsse1517@iit.du.ac.bd",
+    "sameAs": [
+      "https://github.com/rahat1517",
+      "https://www.linkedin.com/in/g-m-rashidul-islam-rahat-509b66341/",
+      "https://leetcode.com/Rahat1517",
+      "https://codeforces.com/profile/rahat1517"
+    ],
+    "knowsAbout": ["Software Engineering", "Full-Stack Development", "React", "Node.js", "MySQL", "Java", "C++", "Data Structures and Algorithms"]
+  }
+  </script>
 </head>
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
   <!-- NAV -->
-  <nav id="nav">
-    <a href="#" class="nav-logo">RAHAT.DEV</a>
-    <ul class="nav-links">
+  <nav id="nav" aria-label="Primary">
+    <a href="#top" class="nav-logo">RAHAT.DEV</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#cp">Problem Solving</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#cp">CP</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#activities">Leadership</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
-    <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <p class="hero-tag">Open to Opportunities</p>
-      <h1 class="hero-name">
-        
-        <span class="outline">G. M. Rashidul Islam </span>
-        Rahat
+  <main id="main">
 
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <p class="hero-tag"><span class="status-dot"></span>Open to SWE Internships &amp; Junior Roles</p>
+      <h1 class="hero-name">
+        <span class="outline">G. M. Rashidul Islam</span>
+        Rahat
       </h1>
+      <p class="hero-role">Software Engineer <span class="sep">/</span> Full-Stack Developer</p>
       <p class="hero-desc">
-        Software engineering student at University of Dhaka with a passion for
-        building full-stack systems, solving algorithmic problems, and exploring
-        IoT. Turning ideas into working software.
+        Software Engineering undergraduate at <strong>IIT, University of Dhaka</strong>.
+        I build full-stack web apps with <strong>React, Node.js &amp; MySQL</strong>,
+        desktop software in <strong>Java</strong>, and tools in <strong>C</strong> —
+        backed by a strong foundation in data structures, algorithms and
+        software requirements engineering.
       </p>
       <div class="hero-meta">
         <div class="hero-meta-item">📍 <span>Dhaka, Bangladesh</span></div>
-        <div class="hero-meta-item">🎓 <span>BSSE, IIT, DU</span></div>
-        <div class="hero-meta-item">⭐ <span>CGPA 3.19 / 4.00 (up to 4th Semester)</span></div>
+        <div class="hero-meta-item">🎓 <span>BSSE, IIT, DU · Class of 2027</span></div>
+        <div class="hero-meta-item">🧠 <span><b id="hero-solved">150+</b> problems solved</span></div>
       </div>
       <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="mailto:bsse1517@iit.du.ac.bd" class="btn-outline">Get In Touch</a>
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="resume.pdf" class="btn-outline resume-btn" download>⤓ Download Résumé</a>
+        <a href="mailto:bsse1517@iit.du.ac.bd?subject=Opportunity%20for%20Rahat" class="btn-outline">Contact Me</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/rahat1517" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/g-m-rashidul-islam-rahat-509b66341/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn ↗</a>
+        <a href="https://leetcode.com/Rahat1517" target="_blank" rel="noopener" aria-label="LeetCode">LeetCode ↗</a>
+        <a href="https://codeforces.com/profile/rahat1517" target="_blank" rel="noopener" aria-label="Codeforces">Codeforces ↗</a>
       </div>
     </div>
 
-    <div class="hero-right">
+    <div class="hero-right" aria-hidden="true">
       <div class="terminal">
         <div class="terminal-header">
           <div class="dot r"></div>
@@ -68,11 +113,13 @@
           <div class="tl"><span class="tp">→</span> <span class="tc">cat engineer.json</span></div>
           <div class="tl"><span class="to">{</span></div>
           <div class="tl"><span class="to"><span class="tk">"name"</span>: <span class="ts">"G. M. Rashidul Islam Rahat"</span>,</span></div>
-          <div class="tl"><span class="to"><span class="tk">"role"</span>: <span class="ts">"Aspiring Software Engineer"</span>,</span></div>
-          <div class="tl"><span class="to"><span class="tk">"university"</span>: <span class="ts">"University of Dhaka"</span>,</span></div>
-          <div class="tl"><span class="to"><span class="tk">"cgpa"</span>: <span class="tv">3.19 (up to 4th Semester)</span>,</span></div>
-          <div class="tl"><span class="to"><span class="tk">"languages"</span>: [<span class="ts">"C"</span>, <span class="ts">"C++"</span>, <span class="ts">"Java"</span> , <span class="ts">"JavaScript"</span>,<span class="ts">"Python"</span>],</span></div>
-          <div class="tl"><span class="to"><span class="tk">"leetcode_solved"</span>: <span class="tv" id="terminal-lc">...</span>,</span></div>
+          <div class="tl"><span class="to"><span class="tk">"role"</span>: <span class="ts">"Software Engineer"</span>,</span></div>
+          <div class="tl"><span class="to"><span class="tk">"education"</span>: <span class="ts">"BSSE @ IIT, University of Dhaka"</span>,</span></div>
+          <div class="tl"><span class="to"><span class="tk">"stack"</span>: [<span class="ts">"React"</span>, <span class="ts">"Node.js"</span>, <span class="ts">"MySQL"</span>, <span class="ts">"Java"</span>],</span></div>
+          <div class="tl"><span class="to"><span class="tk">"languages"</span>: [<span class="ts">"C"</span>, <span class="ts">"C++"</span>, <span class="ts">"Java"</span>, <span class="ts">"JavaScript"</span>, <span class="ts">"Python"</span>],</span></div>
+          <div class="tl"><span class="to"><span class="tk">"leetcode_solved"</span>: <span class="tv" id="terminal-lc">116</span>,</span></div>
+          <div class="tl"><span class="to"><span class="tk">"codeforces_solved"</span>: <span class="tv" id="terminal-cf">41</span>,</span></div>
+          <div class="tl"><span class="to"><span class="tk">"seeking"</span>: <span class="ts">"SWE Internship / Junior Role"</span>,</span></div>
           <div class="tl"><span class="to"><span class="tk">"open_to_work"</span>: <span class="tv">true</span></span></div>
           <div class="tl"><span class="to">}</span></div>
           <div class="tl" style="margin-top:12px"><span class="tp">→</span> <span class="t-cursor"></span></div>
@@ -84,27 +131,81 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stat reveal">
-      <div class="stat-num" data-target="6" data-suffix="+">0</div>
+      <div class="stat-num" data-target="7" data-suffix="">0</div>
       <div class="stat-label">Projects Built</div>
     </div>
     <div class="stat reveal">
-      <div class="stat-num" id="lc-stat" data-suffix="">—</div>
-      <div class="stat-label">LeetCode Solved <span class="live-badge">LIVE</span></div>
+      <div class="stat-num" id="lc-stat">116</div>
+      <div class="stat-label">LeetCode Solved <span class="live-badge" id="lc-live" hidden>LIVE</span></div>
     </div>
     <div class="stat reveal">
-      <div class="stat-num" data-target="40" data-suffix="+">0</div>
-      <div class="stat-label">Codeforces Solved <span class="live-badge">LIVE</span></div>
+      <div class="stat-num" id="cf-stat">41</div>
+      <div class="stat-label">Codeforces Solved <span class="live-badge" id="cf-live" hidden>LIVE</span></div>
     </div>
     <div class="stat reveal">
-      <div class="stat-num" data-target="2" data-suffix="+"></div>
-      <div class="stat-label">Years Coding</div>
+      <div class="stat-num" data-target="5" data-suffix="">0</div>
+      <div class="stat-label">Programming Languages</div>
     </div>
   </div>
 
-  <!-- SKILLS -->
-  <section id="skills">
+  <!-- ABOUT -->
+  <section id="about">
     <div class="section-header reveal">
       <span class="section-num">01</span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>
+          I'm a Software Engineering student at the <strong>Institute of Information
+          Technology (IIT), University of Dhaka</strong> — one of Bangladesh's leading
+          software engineering programs. I enjoy taking a problem from
+          <em>requirements</em> all the way to a <em>working, deployed product</em>.
+        </p>
+        <p>
+          My flagship project, <strong>Academix</strong>, is a full-stack fee management
+          platform with online payments and role-based dashboards. I've also built a
+          <strong>C syntax checker</strong> from scratch, a <strong>JavaFX inventory
+          system</strong>, a PHP web app, and an <strong>Arduino-based IoT toll
+          system</strong> — so I'm comfortable across the stack, from UI to database to
+          hardware.
+        </p>
+        <p>
+          Competitive programming on LeetCode and Codeforces keeps my problem-solving
+          and DSA skills sharp. I'm looking for a team where I can ship real features,
+          learn from experienced engineers, and grow fast.
+        </p>
+      </div>
+      <aside class="about-facts reveal" aria-label="Quick facts">
+        <div class="fact">
+          <span class="fact-key">Looking for</span>
+          <span class="fact-val">Software Engineering Internship / Junior Developer role</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Focus</span>
+          <span class="fact-val">Full-stack web development (React · Node.js · MySQL)</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Strengths</span>
+          <span class="fact-val">DSA &amp; problem solving · OOP · Database design · Requirements engineering (IEEE SRS)</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Location</span>
+          <span class="fact-val">Dhaka, Bangladesh · Open to on-site, hybrid &amp; remote</span>
+        </div>
+        <div class="fact">
+          <span class="fact-key">Languages</span>
+          <span class="fact-val">Bangla (native) · English (professional)</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="alt-bg">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
       <h2 class="section-title">Technical Skills</h2>
       <div class="section-line"></div>
     </div>
@@ -112,138 +213,238 @@
       <div class="skill-card reveal">
         <div class="skill-icon">💻</div>
         <div class="skill-name">Languages</div>
-        <p class="skill-desc">Strong fundamentals in multiple paradigms — procedural, OOP, and scripting.</p>
+        <p class="skill-desc">Procedural, object-oriented and scripting — used across coursework, CP and projects.</p>
         <div class="skill-tags">
-          <span class="tag">C</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">Python</span>
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">SQL</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">🌐</div>
-        <div class="skill-name">Web Technologies</div>
-        <p class="skill-desc">Building full-stack web applications from UI to server-side logic.</p>
+        <div class="skill-name">Frontend &amp; Backend</div>
+        <p class="skill-desc">Building full-stack web apps — responsive UIs, server logic and REST APIs.</p>
         <div class="skill-tags">
-          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">React.js</span>
+          <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">PHP</span><span class="tag">JavaFX</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">🗄️</div>
-        <div class="skill-name">Database</div>
-        <p class="skill-desc">Designing and querying relational databases for real-world applications.</p>
+        <div class="skill-name">Databases</div>
+        <p class="skill-desc">Designing relational schemas and writing queries for real applications.</p>
         <div class="skill-tags">
-          <span class="tag">MySQL</span><span class="tag">Oracle DB</span><span class="tag">SQL</span>
+          <span class="tag">MySQL</span><span class="tag">Oracle DB</span><span class="tag">SQLite</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🧩</div>
+        <div class="skill-name">CS Fundamentals</div>
+        <p class="skill-desc">The core concepts interviews test — and good engineering depends on.</p>
+        <div class="skill-tags">
+          <span class="tag">Data Structures</span><span class="tag">Algorithms</span><span class="tag">OOP</span><span class="tag">DBMS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📐</div>
+        <div class="skill-name">Software Engineering</div>
+        <p class="skill-desc">Gathering, analyzing and documenting requirements before writing code.</p>
+        <div class="skill-tags">
+          <span class="tag">Requirements Eng.</span><span class="tag">IEEE SRS</span><span class="tag">Git &amp; GitHub</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">🔧</div>
-        <div class="skill-name">IoT & Hardware</div>
-        <p class="skill-desc">Bridging the physical and digital worlds with microcontroller-based systems.</p>
+        <div class="skill-name">IoT &amp; Embedded</div>
+        <p class="skill-desc">Connecting the physical and digital worlds with microcontroller systems.</p>
         <div class="skill-tags">
-          <span class="tag">Arduino</span><span class="tag">IoT Sensors</span><span class="tag">Embedded C</span>
+          <span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Embedded C</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="alt-bg">
+  <section id="projects">
     <div class="section-header reveal">
-      <span class="section-num">02</span>
+      <span class="section-num">03</span>
       <h2 class="section-title">Projects</h2>
       <div class="section-line"></div>
     </div>
+
+    <div class="project-filters reveal" role="group" aria-label="Filter projects">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="desktop">Desktop</button>
+      <button class="filter-btn" data-filter="systems">Systems</button>
+      <button class="filter-btn" data-filter="iot">IoT</button>
+      <button class="filter-btn" data-filter="se">Software Eng.</button>
+    </div>
+
     <div class="projects-grid">
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 001 — FEATURED</div>
+      <!-- FEATURED -->
+      <article class="project-card featured reveal" data-category="web">
+        <div class="project-num">// FEATURED PROJECT · FULL-STACK WEB</div>
         <div class="project-name">Academix</div>
-        <p class="project-desc">Smart Semester Fee Management System. Full-stack platform enabling online payments, account verification, and secure role-based dashboards.</p>
+        <p class="project-sub">Smart Semester Fee Management System</p>
+        <p class="project-desc">
+          Paying university semester fees usually means queues, paper receipts and manual
+          verification. Academix moves the whole process online: students pay and track
+          their fees, while administrators verify accounts and monitor payments from a
+          single dashboard.
+        </p>
+        <ul class="project-highlights">
+          <li>Online fee payment flow with account verification</li>
+          <li>Secure role-based dashboards for students and administrators</li>
+          <li>React.js frontend talking to a Node.js backend</li>
+          <li>Relational MySQL schema for students, semesters and payments</li>
+        </ul>
         <div class="project-stack">
           <span class="stack-item">React.js</span><span class="stack-item">Node.js</span><span class="stack-item">MySQL</span><span class="stack-item">JavaScript</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">⌥ View Source</a>
+          <span class="project-link no-link">🔒 Source available on request</span>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 002</div>
+      <article class="project-card reveal" data-category="systems">
+        <div class="project-num">// SYSTEMS · SOFTWARE PROJECT LAB</div>
         <div class="project-name">C Syntax Checker</div>
-        <p class="project-desc">Analyzes C source code and detects syntax errors with detailed diagnostics — helping developers quickly identify and fix compilation issues.</p>
+        <p class="project-desc">
+          A tool written in pure C that analyzes C source files and reports syntax errors
+          with clear diagnostics — helping programmers find and fix compilation issues
+          faster. Strengthened my understanding of how compilers read code.
+        </p>
         <div class="project-stack">
-          <span class="stack-item">C</span>
+          <span class="stack-item">C</span><span class="stack-item">Parsing</span><span class="stack-item">Compiler Basics</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/rahat1517/SPL_-1" class="project-link">⌥ GitHub</a>
+          <a href="https://github.com/rahat1517/SPL_-1" target="_blank" rel="noopener" class="project-link">⌥ Source Code ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 003</div>
+      <article class="project-card reveal" data-category="desktop">
+        <div class="project-num">// DESKTOP APPLICATION</div>
         <div class="project-name">Rahat Shop</div>
-        <p class="project-desc">Desktop inventory and stock management app with JavaFX GUI backed by MySQL — built for small businesses to track products and transactions.</p>
+        <p class="project-desc">
+          Inventory and stock management desktop app for small businesses. A JavaFX GUI
+          backed by MySQL lets shop owners manage products, track stock and record
+          transactions.
+        </p>
         <div class="project-stack">
-          <span class="stack-item">JavaFX</span><span class="stack-item">MySQL</span><span class="stack-item">Java</span>
+          <span class="stack-item">Java</span><span class="stack-item">JavaFX</span><span class="stack-item">MySQL</span><span class="stack-item">OOP</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/rahat1517/RahatShop" class="project-link">⌥ GitHub</a>
+          <a href="https://github.com/rahat1517/RahatShop" target="_blank" rel="noopener" class="project-link">⌥ Source Code ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 004</div>
-        <div class="project-name">INVENTORY MANAGEMENT SYSTEM</div>
-        <p class="project-desc">Desktop inventory and stock management app with HTML ,CSS, JavaScript ,PHP, SQLite</p>
+      <article class="project-card reveal" data-category="web">
+        <div class="project-num">// WEB APPLICATION</div>
+        <div class="project-name">Inventory Management System</div>
+        <p class="project-desc">
+          Web-based inventory system for managing products and stock levels, built with a
+          PHP backend, SQLite storage and a vanilla HTML/CSS/JavaScript frontend.
+        </p>
         <div class="project-stack">
-          <span class="stack-item">JavaScript</span><span class="stack-item">PHP</span><span class="stack-item">HTML</span><span class="stack-item">CSS</span>
+          <span class="stack-item">PHP</span><span class="stack-item">SQLite</span><span class="stack-item">JavaScript</span><span class="stack-item">HTML</span><span class="stack-item">CSS</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/rahat1517/WebTechProject" class="project-link">⌥ GitHub</a>
+          <a href="https://github.com/rahat1517/WebTechProject" target="_blank" rel="noopener" class="project-link">⌥ Source Code ↗</a>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 005</div>
-        <div class="project-name">Tic-Tac-Toe</div>
-        <p class="project-desc">Console-based two-player game in Java with move validation, win detection, and a clean game loop — a solid OOP exercise.</p>
-        <div class="project-stack">
-          <span class="stack-item">Java</span><span class="stack-item">OOP</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/rahat1517/TicTacToe" class="project-link">⌥ GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 006</div>
+      <article class="project-card reveal" data-category="iot">
+        <div class="project-num">// IOT · HARDWARE</div>
         <div class="project-name">Automated Toll System</div>
-        <p class="project-desc">IoT-based real-time toll calculation and vehicle detection using Arduino sensors — automates toll gate operations without manual intervention.</p>
+        <p class="project-desc">
+          IoT system that detects vehicles with sensors and calculates tolls in real time
+          on an Arduino — automating toll-gate operation without manual intervention.
+        </p>
         <div class="project-stack">
-          <span class="stack-item">Arduino</span><span class="stack-item">IoT</span><span class="stack-item">Embedded C</span>
+          <span class="stack-item">Arduino</span><span class="stack-item">IoT</span><span class="stack-item">Embedded C</span><span class="stack-item">Sensors</span>
         </div>
         <div class="project-links">
           <span class="project-link no-link">🔧 Hardware Project</span>
         </div>
-      </div>
+      </article>
 
-      <div class="project-card reveal">
-        <div class="project-num">// PROJECT 007 — SRS</div>
-        <div class="project-name">DU Food Point</div>
-        <p class="project-desc">Software Requirements Specification for DU Food Point. Collected, analyzed, and structured requirements using standard IEEE SRS format.</p>
+      <article class="project-card reveal" data-category="se">
+        <div class="project-num">// REQUIREMENTS ENGINEERING</div>
+        <div class="project-name">DU Food Point — SRS</div>
+        <p class="project-desc">
+          Software Requirements Specification for a campus food ordering system.
+          Elicited, analyzed and structured functional and non-functional requirements
+          following the IEEE SRS standard.
+        </p>
         <div class="project-stack">
-          <span class="stack-item">Requirements Eng.</span><span class="stack-item">IEEE SRS</span>
+          <span class="stack-item">Requirements Eng.</span><span class="stack-item">IEEE SRS</span><span class="stack-item">Analysis</span>
         </div>
         <div class="project-links">
           <span class="project-link no-link">📄 Documentation</span>
         </div>
-      </div>
+      </article>
 
+      <article class="project-card reveal" data-category="desktop">
+        <div class="project-num">// CONSOLE APPLICATION</div>
+        <div class="project-name">Tic-Tac-Toe</div>
+        <p class="project-desc">
+          Two-player console game in Java with move validation, win/draw detection and a
+          clean game loop — designed around object-oriented principles.
+        </p>
+        <div class="project-stack">
+          <span class="stack-item">Java</span><span class="stack-item">OOP</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rahat1517/TicTacToe" target="_blank" rel="noopener" class="project-link">⌥ Source Code ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="more-projects reveal">
+      More on GitHub →
+      <a href="https://github.com/rahat1517" target="_blank" rel="noopener">github.com/rahat1517</a>
+    </p>
+  </section>
+
+  <!-- COMPETITIVE PROGRAMMING -->
+  <section id="cp" class="alt-bg">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Problem Solving</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-intro reveal">
+      I practice algorithms and data structures regularly. Numbers below update
+      automatically from my public profiles.
+    </p>
+    <div class="cp-grid">
+      <div class="cp-card reveal">
+        <div class="cp-platform">LeetCode</div>
+        <div class="cp-count" id="lc-cp-count">116</div>
+        <div class="cp-label">Problems Solved</div>
+        <div class="cp-breakdown" id="lc-breakdown">
+          <span class="diff easy">Easy: 106</span>
+          <span class="diff medium">Medium: 10</span>
+          <span class="diff hard">Hard: 0</span>
+        </div>
+        <a href="https://leetcode.com/Rahat1517" target="_blank" rel="noopener" class="cp-link">↗ View Profile</a>
+      </div>
+      <div class="cp-card reveal">
+        <div class="cp-platform">Codeforces</div>
+        <div class="cp-count" id="cf-cp-count">41</div>
+        <div class="cp-label">Problems Solved</div>
+        <div class="cp-breakdown" id="cf-breakdown">
+          <span class="diff easy">Active Contestant</span>
+        </div>
+        <a href="https://codeforces.com/profile/rahat1517" target="_blank" rel="noopener" class="cp-link">↗ View Profile</a>
+      </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
     <div class="section-header reveal">
-      <span class="section-num">03</span>
+      <span class="section-num">05</span>
       <h2 class="section-title">Education</h2>
       <div class="section-line"></div>
     </div>
@@ -252,147 +453,124 @@
         <div class="edu-left">
           <div class="edu-period">2023 — 2027 (Expected)</div>
           <div class="edu-inst">University of Dhaka</div>
-          <div class="edu-inst">Institute of Information Technology (IIT)</div>
+          <div class="edu-inst">Institute of Information Technology</div>
         </div>
         <div class="edu-right">
-          <div class="edu-degree">B.Sc. in Software Engineering</div>
-          <p class="edu-detail"> CGPA: 3.19 / 4.00 (Up to 4th Semester)</p>
+          <div class="edu-degree">Bachelor of Science in Software Engineering (BSSE)</div>
+          <p class="edu-detail">CGPA: 3.19 / 4.00 (up to 4th semester)</p>
+          <p class="edu-detail"><span class="edu-label">Relevant coursework:</span> Structured Programming, Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Software Requirements Engineering, Web Technologies, Software Project Lab</p>
         </div>
         <div class="edu-badge current">Current</div>
       </div>
       <div class="edu-item reveal">
         <div class="edu-left">
-          <div class="edu-period">Passed: 2022</div>
+          <div class="edu-period">2022</div>
           <div class="edu-inst">Pairahat United College</div>
         </div>
         <div class="edu-right">
-          <div class="edu-degree">HSC — Science</div>
-          <p class="edu-detail">Jashore Board · GPA: 5.00 / 5.00 </p>
+          <div class="edu-degree">Higher Secondary Certificate (HSC) — Science</div>
+          <p class="edu-detail">Jashore Board · GPA 5.00 / 5.00</p>
         </div>
-        
+        <div class="edu-badge gold">GPA 5.00</div>
       </div>
       <div class="edu-item reveal">
         <div class="edu-left">
-          <div class="edu-period">Passed: 2020</div>
+          <div class="edu-period">2020</div>
           <div class="edu-inst">Pairahat Secondary School</div>
         </div>
         <div class="edu-right">
-          <div class="edu-degree">SSC — Science</div>
-          <p class="edu-detail">Jashore Board · GPA: 5.00 / 5.00 </p>
+          <div class="edu-degree">Secondary School Certificate (SSC) — Science</div>
+          <p class="edu-detail">Jashore Board · GPA 5.00 / 5.00</p>
         </div>
-        
+        <div class="edu-badge gold">GPA 5.00</div>
       </div>
     </div>
   </section>
 
-  <!-- COMPETITIVE PROGRAMMING -->
-  <section id="cp" class="alt-bg">
+  <!-- LEADERSHIP & ACTIVITIES -->
+  <section id="activities" class="alt-bg">
     <div class="section-header reveal">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Competitive Programming</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="cp-grid">
-      <div class="cp-card reveal">
-        <div class="cp-platform">LeetCode</div>
-        <div class="cp-count">116</div>
-        <div class="cp-label">Problems Solved <span class="live-badge">LIVE</span></div>
-        <div class="cp-breakdown" id="lc-breakdown">
-          <span class="diff easy">Easy: — 106</span>
-          <span class="diff medium">Medium: — 10</span>
-          <span class="diff hard">Hard: — 0</span>
-        </div>
-        <a href="https://leetcode.com/Rahat1517" target="_blank" class="cp-link">↗ View Profile</a>
-      </div>
-      <div class="cp-card reveal">
-        <div class="cp-platform">Codeforces</div>
-        
-        <div class="cp-count">41</div>
-        <div class="cp-label">Problems Solved <span class="live-badge">LIVE</span></div>
-        <div class="cp-breakdown">
-          <span class="diff easy">Active Participant</span>
-        </div>
-        <a href="https://codeforces.com/rahat1517" target="_blank" class="cp-link">↗ View Profile</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACTIVITIES -->
-  <section id="activities">
-    <div class="section-header reveal">
-      <span class="section-num">05</span>
-      <h2 class="section-title">Activities</h2>
+      <span class="section-num">06</span>
+      <h2 class="section-title">Achievements &amp; Leadership</h2>
       <div class="section-line"></div>
     </div>
     <div class="act-grid">
       <div class="act-card reveal">
         <div class="act-icon">🏆</div>
-        <div class="act-title">Upazila Champion — Science Olympiad</div>
-        <p class="act-desc">Bangladesh Science Olympiad (Secondary Level) — Upazila Champion, demonstrating strong analytical and scientific thinking.</p>
+        <div class="act-title">Upazila Champion — Bangladesh Science Olympiad</div>
+        <p class="act-desc">Won the upazila round at secondary level, demonstrating strong analytical and scientific reasoning.</p>
       </div>
       <div class="act-card reveal">
         <div class="act-icon">🎤</div>
         <div class="act-title">Volunteer — ITVERSE 2023</div>
-        <p class="act-desc">Volunteered at ITVERSE 2023, the annual tech festival of IIT, University of Dhaka — event management and coordination.</p>
-      </div>
-      <div class="act-card reveal">
-        <div class="act-icon">🗣️</div>
-        <div class="act-title">Inter-University Debate Volunteer</div>
-        <p class="act-desc">Supported the Inter-University Debating Competition at University of Dhaka — one of the most prestigious campus debate events.</p>
+        <p class="act-desc">Helped organize and coordinate ITVERSE 2023, the annual tech festival of IIT, University of Dhaka.</p>
       </div>
       <div class="act-card reveal">
         <div class="act-icon">📚</div>
         <div class="act-title">Higher Secondary Tutor</div>
-        <p class="act-desc">Tutored HSC students in core science subjects — built communication, leadership, and mentoring skills through consistent teaching.</p>
+        <p class="act-desc">Tutored HSC students in core science subjects — sharpening communication, mentoring and explaining complex ideas simply.</p>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-icon">🗣️</div>
+        <div class="act-title">Volunteer — Inter-University Debate</div>
+        <p class="act-desc">Supported the Inter-University Debating Competition at the University of Dhaka, one of the campus's major events.</p>
       </div>
       <div class="act-card reveal">
         <div class="act-icon">🏏</div>
-        <div class="act-title">IIT Cricket Team — Allrounder</div>
-        <p class="act-desc">Active member of the IIT Cricket Team as an allrounder — discipline, teamwork, and resilience through sport.</p>
+        <div class="act-title">IIT Cricket Team — All-rounder</div>
+        <p class="act-desc">Represent IIT as an all-rounder — teamwork, discipline and performing under pressure.</p>
       </div>
       <div class="act-card reveal">
         <div class="act-icon">🩸</div>
         <div class="act-title">BADHAN — Blood Donation Activist</div>
-        <p class="act-desc">Member and activist of BADHAN at Fazlul Huq Muslim Hall — regularly participates in voluntary blood donation drives.</p>
+        <p class="act-desc">Member of BADHAN, Fazlul Huq Muslim Hall unit — regularly helps organize voluntary blood donation drives.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="alt-bg contact-section">
+  <section id="contact" class="contact-section">
     <div class="section-header reveal">
-      <span class="section-num">06</span>
+      <span class="section-num">07</span>
       <h2 class="section-title">Contact</h2>
       <div class="section-line"></div>
     </div>
     <h2 class="contact-heading reveal">
-      Let's build<br />
-      <span>something</span><br />
-      awesome.
+      Hiring an intern<br />
+      or <span>junior</span><br />
+      engineer?
     </h2>
+    <p class="contact-sub reveal">
+      I'm actively looking for software engineering opportunities. Whether you have a
+      role, a project, or just a question — my inbox is always open.
+    </p>
     <div class="contact-links reveal">
-      <a href="mailto:bsse1517@iit.du.ac.bd" class="contact-link">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <a href="mailto:bsse1517@iit.du.ac.bd?subject=Opportunity%20for%20Rahat" class="contact-link primary">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         bsse1517@iit.du.ac.bd
       </a>
-      <a href="tel:01754678501" class="contact-link">
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <button type="button" class="contact-link copy-btn" data-copy="bsse1517@iit.du.ac.bd">⧉ Copy email</button>
+      <a href="tel:+8801754678501" class="contact-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
         +880 1754-678501
       </a>
-      <a href="https://github.com/rahat1517" target="_blank" class="contact-link">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/g-m-rashidul-islam-rahat-509b66341/" target="_blank" class="contact-link">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      <a href="https://www.linkedin.com/in/g-m-rashidul-islam-rahat-509b66341/" target="_blank" rel="noopener" class="contact-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
       </a>
+      <a href="https://github.com/rahat1517" target="_blank" rel="noopener" class="contact-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="resume.pdf" class="contact-link resume-btn" download>⤓ Résumé (PDF)</a>
     </div>
   </section>
 
+  </main>
+
   <footer>
-    <p>© 2025 G. M. Rashidul Islam Rahat — IIT, University of Dhaka</p>
-    <p>bsse1517@iit.du.ac.bd</p>
+    <p>© <span id="year">2026</span> G. M. Rashidul Islam Rahat — IIT, University of Dhaka</p>
+    <a href="#top" class="back-top">↑ Back to top</a>
   </footer>
 
   <script src="script.js"></script>
